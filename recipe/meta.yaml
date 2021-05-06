@@ -15,12 +15,8 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  # If this is a new build for the same version, increment the build number.
   number: 0
-  # no skip
   noarch: generic
-
-  # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
     - lib/
@@ -29,13 +25,11 @@ requirements:
   build:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
-
   host:
     - r-base
     - r-rcurl
     - r-jsonlite
     - openjdk
-
   run:
     - r-base
     - r-rcurl
@@ -44,7 +38,6 @@ requirements:
 
 test:
   commands:
-    # You can put additional test commands to be run here.
     - $R -e "library('h2o')"           # [not win]
     - "\"%R%\" -e \"library('h2o')\""  # [win]
 
