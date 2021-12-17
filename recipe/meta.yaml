@@ -1,4 +1,4 @@
-{% set version = "3.34.0.3" %}
+{% set version = "3.34.0.6" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/h2o_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/h2o/h2o_{{ version }}.tar.gz
-  sha256: 2a707b9f7271eae611c9e81b13d2024b8829f6b06b3c41c5b97de1aef591931e
+  sha256: 420de60f01a663d01df597bd5e9ab124c59c13b403b5540581add88355fd30c9
 
 build:
   merge_build_host: true  # [win]
